@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf8">
+        <title>{{project.name}}</title>
+        <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="project">
+            <div class="project-name">
+                {{project.name}}
+            </div>
+            <div class="project-image">
+                <img src="{{project.imageSource}}" alt="image of the project">
+            </div>
+            <div class="project-description">
+                {{project.description}}
+            </div>
+            <div class="project-technologies">
+                {{#each project.technologies as |technology|}}
+                    <div class="project-technology">
+                        {{technology}}
+                    </div>
+                {{/each}}
+            </div>
+            <div class="project-url">
+                {{project.url}}
+            </div>
+        </div>
+    </body>
+</html>

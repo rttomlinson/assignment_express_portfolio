@@ -16,4 +16,7 @@ const projects = [
     ];
     
     
-module.exports = projects;
+module.exports = {
+    Project,
+    projects
+};
