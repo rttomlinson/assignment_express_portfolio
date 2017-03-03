@@ -13,12 +13,13 @@ function findProjectByName(projectName) {
 router.use(function(request, response, next) {
     console.log("Inside /project route");
     next();
-})
+});
 
 router.get("/:name", function (request, response, next) {
     console.log("Value from URL is", request.params.name);
     const projectName = request.params.name;
-    response.render("projects-page", { project : findProjectByName(projectName)});
+    let project = findProjectByName(projectName);
+    response.render("projects-page", { project : project, "title": project.name});
 });
 
 module.exports = router;
