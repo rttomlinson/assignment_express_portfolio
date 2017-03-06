@@ -7,7 +7,7 @@ let {projects} = require("../modules/projects");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { projects: projects, "title": "Projects Page" });
+  res.json(projects);
 });
 
 module.exports = router;
