@@ -7,6 +7,7 @@ let {projects} = require("../modules/projects");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    res.setHeader("Access-Control-Allow-Origin", "*");
   res.json(projects);
 });
 
