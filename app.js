@@ -5,9 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-var projects = require('./routes/projects');
 
 var app = express();
 
@@ -22,6 +19,29 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+////////////////////////////////////
+// Connect to mongo database
+//////////////////////////////////
+
+const mongoose = require('mongoose');
+app.use((req, res, next) => {
+    if (mongoose.connection.readyState) {
+        next();
+    }
+    else {
+        require('./mongodb')().then(() => {
+            next();
+        });
+    }
+});
+
+
+
+var index = require('./routes/index');
+var users = require('./routes/users');
+var projects = require('./routes/projects');
 
 app.use('/projects', projects);
 app.use('/users', users);
