@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-const Project = require('../models');
+const Project = require('../models').Project;
 
 
 
@@ -15,5 +15,7 @@ router.get('/', async function(req, res, next) {
 
 
 });
+
+
 
 module.exports = router;

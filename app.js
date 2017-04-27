@@ -16,7 +16,9 @@ app.set('view engine', 'hbs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -27,24 +29,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const mongoose = require('mongoose');
 app.use((req, res, next) => {
-    if (mongoose.connection.readyState) {
-        next();
-    }
-    else {
-        require('./mongodb')().then(() => {
-            next();
-        });
-    }
+  if (mongoose.connection.readyState) {
+    next();
+  }
+  else {
+    require('./mongo')().then(() => {
+      next();
+    });
+  }
 });
 
 
 
 var index = require('./routes/index');
-var users = require('./routes/users');
 var projects = require('./routes/projects');
 
 app.use('/projects', projects);
-app.use('/users', users);
 app.use('/', index);
 
 

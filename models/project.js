@@ -24,10 +24,16 @@ const ProjectSchema = new Schema({
   }
 });
 
-ProjectSchema.statics.getAllItems = async function() {
+ProjectSchema.statics.getAllProjects = async function() {
   //get the inventory!
   return await Project.find({});
 };
+
+ProjectSchema.statics.addNewProject = async function(name, url, description, imageSource, technologies, github) {
+  let project = new Project({name, url, description, imageSource, technologies, github});
+  return await project.save();
+};
+
 
 const Project = mongoose.model('Project', ProjectSchema);
 
