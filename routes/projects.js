@@ -2,7 +2,7 @@
 
 var express = require('express');
 var router = express.Router();
-const Project = require('../models');
+const Project = require('../models').Project;
 
 
 // function findProjectByName(projectName) {
@@ -36,10 +36,24 @@ router.get('/new', function(req, res, next) {
 
 /* Post new project page. */
 router.post('/new', async function(req, res, next) {
-    let { name, url, description, imageSource, technologies, github } = req.body;
+    let {
+        name,
+        url,
+        description,
+        imageSource,
+        technologies,
+        github
+    } = req.body;
     //Make technologies an array. Will be recieved as a string of space separated techs
     technologies = technologies.split(" ");
-    let project = await Project.addNewProject({name, url, description, imageSource, technologies, github});
+    let project = await Project.addNewProject({
+        name,
+        url,
+        description,
+        imageSource,
+        technologies,
+        github
+    });
     res.end(`Posting new project to database: ${project}`);
 
 
