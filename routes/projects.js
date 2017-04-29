@@ -33,6 +33,17 @@ router.get('/new', function(req, res, next) {
     res.render("project/new");
 });
 
+router.get('/', async function(req, res, next) {
+    let count = +req.query.count;
+    let projects = await Project.getMostRecentProjects(count);
+    console.log("the projects in the db are", projects);
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.json(projects);
+
+
+});
+
+
 
 /* Post new project page. */
 router.post('/new', async function(req, res, next) {
@@ -46,15 +57,16 @@ router.post('/new', async function(req, res, next) {
     } = req.body;
     //Make technologies an array. Will be recieved as a string of space separated techs
     technologies = technologies.split(" ");
-    let project = await Project.addNewProject({
+    Project.create({
         name,
         url,
         description,
         imageSource,
         technologies,
         github
+    }).then((project) => {
+        res.end(`Posting new project to database: ${project}`);
     });
-    res.end(`Posting new project to database: ${project}`);
 
 
 });

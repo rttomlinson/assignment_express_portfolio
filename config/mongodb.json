@@ -1,6 +1,6 @@
 {
     "development": {
-        "database": "ponz_dev",
+        "database": "personal_project",
         "host": "localhost"
     },
     "test": {

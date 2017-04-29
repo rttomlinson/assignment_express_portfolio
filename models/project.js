@@ -22,6 +22,8 @@ const ProjectSchema = new Schema({
   github: {
     type: String
   }
+}, {
+  timestamps: true
 });
 
 ProjectSchema.statics.getAllProjects = async function() {
@@ -29,8 +31,25 @@ ProjectSchema.statics.getAllProjects = async function() {
   return await Project.find({});
 };
 
+ProjectSchema.statics.getMostRecentProjects = async function(count) {
+  //get the inventory!
+  return await Project.find({}).limit(count).sort({
+    updatedAt: -1
+  });
+};
+
+
+
+
 ProjectSchema.statics.addNewProject = async function(name, url, description, imageSource, technologies, github) {
-  let project = new Project({name, url, description, imageSource, technologies, github});
+  let project = new Project({
+    name,
+    url,
+    description,
+    imageSource,
+    technologies,
+    github
+  });
   return await project.save();
 };
 
