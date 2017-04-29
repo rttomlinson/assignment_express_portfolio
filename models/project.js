@@ -34,7 +34,7 @@ ProjectSchema.statics.getAllProjects = async function() {
 ProjectSchema.statics.getMostRecentProjects = async function(count) {
   //get the inventory!
   return await Project.find({}).limit(count).sort({
-    updatedAt: 1
+    updatedAt: -1
   });
 };
 
