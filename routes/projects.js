@@ -46,30 +46,30 @@ router.get('/', async function(req, res, next) {
 
 
 /* Post new project page. */
-router.post('/new', async function(req, res, next) {
-    let {
-        name,
-        url,
-        description,
-        imageSource,
-        technologies,
-        github
-    } = req.body;
-    //Make technologies an array. Will be recieved as a string of space separated techs
-    technologies = technologies.split(" ");
-    Project.create({
-        name,
-        url,
-        description,
-        imageSource,
-        technologies,
-        github
-    }).then((project) => {
-        res.end(`Posting new project to database: ${project}`);
-    });
+// router.post('/new', async function(req, res, next) {
+//     let {
+//         name,
+//         url,
+//         description,
+//         imageSource,
+//         technologies,
+//         github
+//     } = req.body;
+//     //Make technologies an array. Will be recieved as a string of space separated techs
+//     technologies = technologies.split(" ");
+//     Project.create({
+//         name,
+//         url,
+//         description,
+//         imageSource,
+//         technologies,
+//         github
+//     }).then((project) => {
+//         res.end(`Posting new project to database: ${project}`);
+//     });
 
 
-});
+// });
 
 
 
