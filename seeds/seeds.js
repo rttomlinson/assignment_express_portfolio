@@ -32,10 +32,18 @@ module.exports = () => {
       github: "https://github.com/rttomlinson/weather_app"
     }),
     new Project({
+      name: "Blood Glucose Tracker",
+      url: "Not available",
+      description: "An app for tracking and analyzing blood glucose levels throughout the day.",
+      imageSource: "http://res.cloudinary.com/dsuajh1lm/image/upload/c_scale,w_450/v1494267643/FireShot_Capture_10_-_-_https___personal-projects-rttomlinson.c9users.io_user_dfiurk.png",
+      technologies: ["Sequelize", "Bootstrap", "Passport"],
+      github: "https://github.com/rttomlinson/blood_sugar_tracker"
+    }),
+    new Project({
       name: "E-commerce",
       url: "https://e-commerce-site.herokuapp.com/",
       description: "E-commerce site ulilizing POSTGRES, MONGODB, and the Stripe API for payment processing",
-      imageSource: "http://res.cloudinary.com/dsuajh1lm/image/upload/c_scale,w_450/v1493495429/FireShot_Capture_2_-_-_https___nameless-inlet-64017.herokuapp.com_products_wd8iij.png",
+      imageSource: "http://res.cloudinary.com/dsuajh1lm/image/upload/c_scale,w_450/v1494268301/FireShot_Capture_13_-_-_https___e-commerce-site.herokuapp.com_products_tuhlki.png",
       technologies: ["Mongoose", "Sequlize", "Stripe API"],
       github: "https://github.com/rttomlinson/project_mimirs_market"
     }),
@@ -43,7 +51,7 @@ module.exports = () => {
       name: "Superchat",
       url: "https://superchatroom.herokuapp.com/",
       description: "Project using Websockets and Redis. Anonymous real-time chatroom.",
-      imageSource: "http://res.cloudinary.com/dsuajh1lm/image/upload/c_scale,w_450/v1493575212/FireShot_Capture_4_-_Best_Chatroom_Ever_-_https___vikingcodeschool-rttomlinson.c9users.io__apet4u.png",
+      imageSource: "http://res.cloudinary.com/dsuajh1lm/image/upload/c_scale,w_450/v1494268327/FireShot_Capture_11_-_Best_Chatroom_Ever_-_https___superchatroom.herokuapp.com__chxmma.png",
       technologies: ["Redis", "Websockets"],
       github: "https://github.com/rttomlinson/project_superchat"
     })
