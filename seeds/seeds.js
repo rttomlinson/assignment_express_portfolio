@@ -54,10 +54,18 @@ module.exports = () => {
       imageSource: "http://res.cloudinary.com/dsuajh1lm/image/upload/c_scale,w_450/v1494268327/FireShot_Capture_11_-_Best_Chatroom_Ever_-_https___superchatroom.herokuapp.com__chxmma.png",
       technologies: ["Redis", "Websockets"],
       github: "https://github.com/rttomlinson/project_superchat"
+    }),
+    new Project({
+      name: "Wildlife Watcher",
+      url: "https://lifewatcher.herokuapp.com",
+      description: "App for tracking wildlife observation. Ideal for fieldwork. Still in progress",
+      imageSource: "http://res.cloudinary.com/dsuajh1lm/image/upload/c_scale,w_450/v1496063351/FireShot_Capture_6_-_React_App_-_https___vikingcodeschool-rttomlinson.c9users.io_dashboard_boards_18_ioeciv.png",
+      technologies: ["React", "Webpack", "NodeJS"],
+      github: "https://github.com/rttomlinson/project_djello"
     })
   ];
 
-
+  //Images are 450 x 236
   // ----------------------------------------
   // Finish
   // ----------------------------------------
