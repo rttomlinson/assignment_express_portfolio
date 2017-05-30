@@ -57,7 +57,7 @@ module.exports = () => {
     }),
     new Project({
       name: "Wildlife Watcher",
-      url: "https://lifewatcher.herokuapp.com",
+      url: "https://fieldbuddy.herokuapp.com",
       description: "App for tracking wildlife observation. Ideal for fieldwork. Still in progress",
       imageSource: "http://res.cloudinary.com/dsuajh1lm/image/upload/c_scale,w_450/v1496063351/FireShot_Capture_6_-_React_App_-_https___vikingcodeschool-rttomlinson.c9users.io_dashboard_boards_18_ioeciv.png",
       technologies: ["React", "Webpack", "NodeJS"],
